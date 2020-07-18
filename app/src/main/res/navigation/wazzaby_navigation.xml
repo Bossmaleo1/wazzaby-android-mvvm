@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wazzaby_navigation"
+    app:startDestination="@id/launchViewFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/launchViewFragment"
+        android:name="com.wazzaby.android.view.LaunchViewFragment"
+        android:label="LaunchViewFragment" >
+        <action
+            android:id="@+id/launch_to_loginview"
+            app:destination="@id/loginViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginViewFragment"
+        android:name="com.wazzaby.android.view.LoginViewFragment"
+        android:label="fragment_login_view"
+        tools:layout="@layout/fragment_login_view" />
+</navigation>
