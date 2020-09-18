@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/launchViewFragment"
-        android:name="com.wazzaby.android.view.LaunchViewFragment"
+        android:name="com.wazzaby.android.presentation.fragment.LaunchViewFragment"
         android:label="LaunchViewFragment" >
         <action
             android:id="@+id/launch_to_loginview"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginViewFragment"
-        android:name="com.wazzaby.android.view.LoginViewFragment"
+        android:name="com.wazzaby.android.presentation.fragment.LoginViewFragment"
         android:label="fragment_login_view"
         tools:layout="@layout/fragment_login_view" />
 </navigation>

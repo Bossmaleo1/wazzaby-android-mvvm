@@ -1,4 +1,4 @@
-package com.wazzaby.android.view
+package com.wazzaby.android.presentation.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.wazzaby.android.R
 import com.wazzaby.android.databinding.FragmentLoginViewBinding
 import com.wazzaby.android.viewmodel.LoginViewModel
+import javax.inject.Inject
 
 
 class LoginViewFragment : Fragment() {
 
-    private lateinit var viewModel: LoginViewModel
+    @Inject
+    lateinit var viewModel: LoginViewModel
     private lateinit var loginviewfragmentbinding : FragmentLoginViewBinding
 
 
@@ -43,7 +45,12 @@ class LoginViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+
+        val loginComponent =
+            YambaApp.getAppComponent().getLoginActivityComponent().create()
+
+        //val userComponent = Dagger
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         loginviewfragmentbinding.viewModel = viewModel
         loginviewfragmentbinding.lifecycleOwner = this
@@ -80,6 +87,7 @@ class LoginViewFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
+        
         inflater.inflate(R.menu.menu_inscript,menu)
     }
 

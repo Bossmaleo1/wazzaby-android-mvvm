@@ -1,4 +1,4 @@
-package com.wazzaby.android.view
+package com.wazzaby.android.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
